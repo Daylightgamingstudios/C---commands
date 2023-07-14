@@ -188,7 +188,40 @@ for (int i = 0; i < 5; i++) {
     std::cout << numbers[i] << " ";  // Displaying each element
 }
 
+//use this to decalare a class
+class myclass{
+    
+}
 
+//in classes you can have a public and a private
+
+class sidsclass{
+    public:
+    std::cout<<"Public can be used anywhere in the code";
+    private:
+    std::cout<<"However Private cannot be used anywhere in the code";
+}
+
+//You can defin class objects to use through out the code
+int main(){
+    object sidsclass;
+}
+
+//Additonally you can define functions in classes note double expects a return value while void doesnt
+
+class sidsclass2{
+    public:
+    void myfunction(){
+        std::cout<<"Hello World";
+    }
+}
+//and you can call them anywher upon defining and object
+
+int main(){
+    sidsclass2 obj;
+
+    obj.myfunction();
+}
 //example project 1 multiply two numbers function
 
 #include <iostream>
@@ -314,3 +347,80 @@ int main() {
 
     return 0;
 }
+
+//example project 6 student management system uses classes:
+#include <iostream>
+#include <string>
+
+class student {
+public:
+    int studentnum;
+    int studentgrade1;
+    int studentgrade2;
+    int studentgrade3;
+    std::string name;
+
+    void namesetter() {
+        std::cout << "Please Enter Student's name: ";
+        std::cin >> name;
+    }
+
+    void stdntnumsetter() {
+        std::cout << "Please Enter Student's number: ";
+        std::cin >> studentnum;
+    }
+
+    void stdntgrades() {
+        std::cout << "Please enter Student's Grade #1: ";
+        std::cin >> studentgrade1;
+        std::cout << "Please enter Student's Grade #2: ";
+        std::cin >> studentgrade2;
+        std::cout << "Please enter Student's Grade #3: ";
+        std::cin >> studentgrade3;
+    }
+
+    void results() {
+        std::cout << "Student's Name: " << name << std::endl;
+        std::cout << "Student's Number: " << studentnum << std::endl;
+        std::cout << "Student's Grade #1: " << studentgrade1 << std::endl;
+        std::cout << "Student's Grade #2: " << studentgrade2 << std::endl;
+        std::cout << "Student's Grade #3: " << studentgrade3 << std::endl;
+    }
+};
+
+int main() {
+    student obj;
+    char options;
+
+    std::cout << "Welcome to the Student Management System" << std::endl << std::endl;
+
+    while (true) {
+        std::cout << "Please select an option from the menu (1, 2, 3, 4): ";
+        std::cin >> options;
+
+        switch (options) {
+        case '1':
+            obj.namesetter();
+            break;
+
+        case '2':
+            obj.stdntnumsetter();
+            break;
+
+        case '3':
+            obj.stdntgrades();
+            break;
+
+        case '4':
+            obj.results();
+            break;
+
+        default:
+            std::cout << "Invalid option. Please try again." << std::endl;
+            break;
+        }
+    }
+
+    return 0;
+}
+
